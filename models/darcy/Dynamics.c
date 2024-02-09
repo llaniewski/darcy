@@ -1,7 +1,3 @@
-// Model for solving the wave equation as a system of first order DE's
-// u'' = lap(u)
-// u'' = c(u_xx + u_yy)
-
 
 CudaDeviceFunction float2 Color() {
   float2 ret;
