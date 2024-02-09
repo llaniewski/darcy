@@ -1,23 +1,29 @@
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/" permissive="true">
-	<Geometry nx="128" ny="128">
-		<None name="bulk"><Box/></None>
-        <Dirichlet name="inlet"><Box dx="10" nx="10" dy="10" ny="10"/></Dirichlet>
-        <Dirichlet name="outlet"><Box dx="-10" nx="10" dy="-10" ny="10"/></Dirichlet>
+    <Geometry nx="128" ny="128">
+        <None name="bulk">
+            <Box/>
+        </None>
+        <Dirichlet name="inlet">
+            <Box dx="10" nx="10" dy="10" ny="10"/>
+        </Dirichlet>
+        <Dirichlet name="outlet">
+            <Box dx="-10" nx="10" dy="-10" ny="10"/>
+        </Dirichlet>
         <None name="wall">
             <Box nx="1"/>
             <Box ny="1"/>
         </None>
-	</Geometry>
-	<Model>
-		<Param name="Darcy" value="0.01"/>
+    </Geometry>
+    <Model>
+        <Param name="Darcy" value="0.01"/>
         <Param name="Darcy" zone="wall" value="0.0"/>
-		<Param name="Relaxation" value="10"/>
-		<Param name="Pressure" value="0"/>
+        <Param name="Relaxation" value="10"/>
+        <Param name="Pressure" value="0"/>
         <Param name="Pressure" zone="inlet" value="1"/>
         <Param name="Pressure" zone="outlet" value="-1"/>
     </Model>
     <VTK/>
-	<VTK Iterations="1000"/>
-	<Solve Iterations="200000"/>
+    <VTK Iterations="1000"/>
+    <Solve Iterations="200000"/>
 </CLBConfig>

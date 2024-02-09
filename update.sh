@@ -319,6 +319,3 @@ if test $(parse_url "$URL_TCLB" "4") == "github.com"; then
         fi
     fi
 fi
-
-
-
